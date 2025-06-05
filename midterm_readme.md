@@ -7,8 +7,8 @@
 baseURL: "http://54.252.155.248"
 
 - [] : API V1 TODO
-- [x] : API V2 TODO CRUD WITH AUTHENTICATED
-- [] : API V3 MOVIE "https://www.themoviedb.org"
+- [] : API V2 TODO CRUD WITH AUTHENTICATED
+- [x] : API V3 MOVIE "https://www.themoviedb.org"
 
 username: todo_user{userId}
 username: password{userId}
@@ -17,19 +17,19 @@ username: password{userId}
 
 - [x] Create Project with Vite (5pts)
 
-- [] Install packages to the project (5pts)
+- [x] Install packages to the project (5pts)
 
-- [] Setup Folder Structures (5pts)
+- [x] Setup Folder Structures (5pts)
 
-- [] Pick some CSS Framework (5pts)
+- [x] Pick some CSS Framework (5pts)
 
 ### Part-2 : Build UI with React Component (35pts)
 
 ### 1. Login Page
 
-- [] Inputs (5pts)
+- [x] Inputs (5pts)
 
-- [] Button to Submit (5pts)
+- [x] Button to Submit (5pts)
 
 ### 2. Todo Page
 
