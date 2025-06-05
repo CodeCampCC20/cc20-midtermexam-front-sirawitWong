@@ -63,7 +63,7 @@ fetch(url, options)
         <p>{detail}</p>
         <div className="card-actions justify-end">
       <button onClick={(ev)=> addToFavorite(ev)} value={id} className="btn btn-primary">Favorite</button>
-      <button onClick={(ev)=> removeFavorite(ev)} value={id} className="btn btn-primary">UnFavorite</button>
+      <button onClick={(ev)=> removeFavorite(ev)} value={id} className="btn btn-error">UnFavorite</button>
       <button onClick={(ev)=> viewDetail(ev)} value={id} className="btn btn-secondary">Details</button>
     </div>
   </div>
