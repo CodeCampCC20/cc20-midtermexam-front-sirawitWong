@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router"
 import { useDetailId } from "../store/detailIDStore"
-import { useFavoriteStore } from "../store/favoriteStore"
 import {key} from "../utils/secret"
 
 export default function MovieCard(props) {
@@ -31,6 +30,25 @@ fetch(url, options)
   .catch(err => console.error(err));
         
     }
+     const removeFavorite = (ev) => {
+        const url = 'https://api.themoviedb.org/3/account/22056861/favorite';
+        const options = {
+        method: 'POST',
+            headers: {
+            accept: 'application/json',
+            'content-type': 'application/json',
+            Authorization: apiKey
+  },
+        body: JSON.stringify({media_type: 'movie', media_id: ev.target.value, favorite: false})
+};
+fetch(url, options)
+  .then(res => res.json())
+  .then(json => console.log(json))
+  .catch(err => console.error(err));
+        
+    }
+
+    
 
     return (
         <div className="card card-side bg-base-100 shadow-sm mx-2">
@@ -45,6 +63,7 @@ fetch(url, options)
         <p>{detail}</p>
         <div className="card-actions justify-end">
       <button onClick={(ev)=> addToFavorite(ev)} value={id} className="btn btn-primary">Favorite</button>
+      <button onClick={(ev)=> removeFavorite(ev)} value={id} className="btn btn-primary">UnFavorite</button>
       <button onClick={(ev)=> viewDetail(ev)} value={id} className="btn btn-secondary">Details</button>
     </div>
   </div>
