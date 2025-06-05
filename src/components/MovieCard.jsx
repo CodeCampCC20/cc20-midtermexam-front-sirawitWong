@@ -11,7 +11,7 @@ export default function MovieCard(props) {
     const navigate = useNavigate()
     const viewDetail = (ev)=> {
         updateId(ev.target.value)
-        navigate("details")
+        navigate("/details")
     }
 
     const addToFavorite = (ev) => {
