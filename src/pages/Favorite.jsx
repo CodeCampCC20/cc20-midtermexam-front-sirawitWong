@@ -35,7 +35,7 @@ function getFavoriteList(){
     return (
         <>
             {isLogin ? "" : <Navigate to={"/login"}/>}
-            <div className="flex flex-row flex-wrap justify-center gap-2 ps-2">
+            <div className="flex flex-row flex-wrap justify-start gap-2 ps-2">
                 { favoriteList.results?.map((movie) => (
                 <MovieCard key={movie.id} id={movie.id} title={movie.title} img={movie.poster_path} date={movie.release_date} detail={movie.overview}/>  
             ))
