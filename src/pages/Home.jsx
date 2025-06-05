@@ -31,6 +31,7 @@ function getMovieList(){
     useEffect(() => {
         getMovieList()
     }, [])
+    console.log(movieList)
     return (
         <>
             {isLogin ? "" :<Navigate to={"login"}/>}

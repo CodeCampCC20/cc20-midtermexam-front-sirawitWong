@@ -30,6 +30,7 @@ function getFavoriteList(){
     useEffect(()=> {
         getFavoriteList()
     }, [])
+    console.log(favoriteList)
     return (
         <>
             {isLogin ? "" : <Navigate to={"/login"}/>}
