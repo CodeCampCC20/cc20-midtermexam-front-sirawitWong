@@ -3,6 +3,7 @@ import { useLoginStore } from "../store/loginStore"
 import {key} from "../utils/secret"
 import { useEffect } from "react"
 import { useFavoriteStore } from "../store/favoriteStore"
+import MovieCard from "../components/MovieCard"
 
 export default function Favorite() {
     const isLogin = useLoginStore(state => state.isLogin)

@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router"
 import { useDetailId } from "../store/detailIDStore"
 import { useFavoriteStore } from "../store/favoriteStore"
+import {key} from "../utils/secret"
 
 export default function MovieCard(props) {
     const {id, title, img, date, detail} = props
+    const apiKey = key.apiKey
     const updateId = useDetailId(state => state.updateId)
-    const updateList = useFavoriteStore(state => state.updateList)
-
+    
     const navigate = useNavigate()
     const viewDetail = (ev)=> {
         updateId(ev.target.value)
@@ -14,8 +15,20 @@ export default function MovieCard(props) {
     }
 
     const addToFavorite = (ev) => {
-        console.log(ev.target.value)
-        updateList(ev.target.value)
+        const url = 'https://api.themoviedb.org/3/account/22056861/favorite';
+        const options = {
+        method: 'POST',
+            headers: {
+            accept: 'application/json',
+            'content-type': 'application/json',
+            Authorization: apiKey
+  },
+        body: JSON.stringify({media_type: 'movie', media_id: ev.target.value, favorite: true})
+};
+fetch(url, options)
+  .then(res => res.json())
+  .then(json => console.log(json))
+  .catch(err => console.error(err));
         
     }
 
